@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<!-- Thẻ html khai báo ngôn ngữ trang web là tiếng Việt -->
+<html lang="vi">
+
+<head>
+    <!-- Khai báo bảng mã ký tự hiển thị tiếng Việt chuẩn UTF-8 -->
+    <meta charset="UTF-8">
+
+    <!-- Cấu hình hiển thị chuẩn Responsive cho các thiết bị di động -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Thẻ meta mô tả nội dung trang cho SEO Google -->
+    <meta name="description" content="Tổng hợp các thẻ HTML và thuộc tính thông dụng kèm ví dụ trực quan.">
+
+    <!-- Tiêu đề hiển thị trên thẻ tab của trình duyệt -->
+    <title>Tổng Hợp Thẻ HTML & Thuộc Tính Thường Dùng</title>
+
+    <!-- Liên kết file CSS bên ngoài (nếu có) -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <style>
+        /* Style giao diện giúp tổng quan đẹp mắt, dễ theo dõi */
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 { margin: 0 0 10px 0; font-size: 28px; }
+        h2 { color: var(--primary-color); border-bottom: 2px solid var(--border-color); padding-bottom: 8px; margin-top: 30px; }
+        
+        section {
+            background-color: var(--card-bg);
+            padding: 20px 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        code {
+            background-color: #f1f5f9;
+            color: #d97706;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95em;
+        }
+
+        .demo-box {
+            background-color: #f8fafc;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        table, th, td {
+            border: 1px solid var(--border-color);
+        }
+
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1f5f9;
+        }
+
+        .tag-note {
+            color: #64748b;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], select, textarea {
+            width: 100%;
+            padding: 8px 12px;
+            margin: 6px 0 14px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- 1. HEADER: Thẻ ngữ nghĩa chứa phần đầu trang -->
+        <header>
+            <h1>BẢNG TRA CỨU CÁC THẺ & THUỘC TÍNH HTML THÔNG DỤNG</h1>
+            <p>Tài liệu hướng dẫn trực quan dành cho người mới học HTML</p>
+        </header>
+
+        <!-- 2. NAV: Thanh điều hướng liên kết -->
+        <nav>
+            <div class="demo-box">
+                <strong>Thẻ <code>&lt;nav&gt;</code> & <code>&lt;a&gt;</code> (Điều hướng):</strong><br>
+                <!-- Thẻ a với thuộc tính href (đường dẫn), target="_blank" (mở tab mới), title (chú thích khi di chuột) -->
+                <a href="#text-section" title="Đi đến phần Văn bản">1. Văn bản</a> | 
+                <a href="#list-section" title="Đi đến phần Danh sách">2. Danh sách</a> | 
+                <a href="#media-section" title="Đi đến phần Hình ảnh & Media">3. Media</a> | 
+                <a href="#form-section" title="Đi đến phần Form nhập liệu">4. Form & Input</a> | 
+                <a href="#table-section" title="Đi đến phần Bảng dữ liệu">5. Bảng</a> |
+                <a href="https://developer.mozilla.org/vi/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN Web Docs ↗</a>
+            </div>
+        </nav>
+
+        <main>
+            <!-- SECTION 1: CÁC THẺ VĂN BẢN (TEXT ELEMENTS) -->
+            <section id="text-section">
+                <h2>1. Các thẻ định dạng Văn bản (Text Elements)</h2>
+                
+                <!-- Thẻ Tiêu đề h1 -> h6 -->
+                <h3>Thẻ tiêu đề <code>&lt;h1&gt;</code> đến <code>&lt;h6&gt;</code></h3>
+                <h1>Tiêu đề H1 (Độ ưu tiên cao nhất / Tiêu đề chính)</h1>
+                <h2>Tiêu đề H2 (Mục lớn)</h2>
+                <h3>Tiêu đề H3 (Mục con)</h3>
+
+                <!-- Thẻ Đoạn văn <p> -->
+                <h3>Thẻ đoạn văn <code>&lt;p&gt;</code> & Thuộc tính toàn cục (Global Attributes)</h3>
+                <p id="paragraph-1" class="text-content" title="Đây là thuộc tính title hiển thị tooltip khi di chuột" style="color: #333;">
+                    Đây là thẻ đoạn văn <code>&lt;p&gt;</code>. Sử dụng các thuộc tính như <code>id</code> (định danh duy nhất), <code>class</code> (lớp phân loại), <code>style</code> (CSS trực tiếp), và <code>title</code> (chú thích).
+                </p>
+
+                <!-- Các thẻ định dạng chữ (Inline formatting) -->
+                <h3>Các thẻ định dạng chữ (Inline)</h3>
+                <div class="demo-box">
+                    <ul>
+                        <li><code>&lt;strong&gt;</code>: <strong>In đậm (nhấn mạnh ngữ nghĩa)</strong></li>
+                        <li><code>&lt;b&gt;</code>: <b>In đậm (chỉ tạo kiểu dáng)</b></li>
+                        <li><code>&lt;em&gt;</code>: <em>In nghiêng (nhấn mạnh ngữ nghĩa)</em></li>
+                        <li><code>&lt;i&gt;</code>: <i>In nghiêng (chữ nghiêng)</i></li>
+                        <li><code>&lt;mark&gt;</code>: <mark>Tô vàng chữ (highlight)</mark></li>
+                        <li><code>&lt;small&gt;</code>: <small>Chữ kích thước nhỏ hơn</small></li>
+                        <li><code>&lt;del&gt;</code> & <code>&lt;ins&gt;</code>: <del>Giá cũ 100k</del> <ins>Giá mới 50k</ins></li>
+                        <li><code>&lt;sub&gt;</code> & <code>&lt;sup&gt;</code>: H<sub>2</sub>O (Chỉ số dưới), X<sup>2</sup> (Chỉ số trên)</li>
+                        <li><code>&lt;br&gt;</code>: Ngắt dòng <br> (xuống dòng ngay tại đây)</li>
+                        <li><code>&lt;hr&gt;</code>: Tạo đường kẻ ngang phân cách bên dưới</li>
+                    </ul>
+                </div>
+                <hr>
+
+                <!-- Trích dẫn & Mã nguồn -->
+                <h3>Trích dẫn & Khối mã lệnh</h3>
+                <blockquote cite="https://vi.wikipedia.org">
+                    Đây là thẻ <code>&lt;blockquote&gt;</code> dùng để trích dẫn một đoạn văn bản dài từ nguồn khác.
+                </blockquote>
+                <pre><code>// Thẻ &lt;pre&gt; kết hợp &lt;code&gt; giữ nguyên định dạng khoảng trắng và xuống dòng
+function helloWorld() {
+    console.log("Hello, World!");
+}</code></pre>
+            </section>
+
+            <!-- SECTION 2: DANH SÁCH (LISTS) -->
+            <section id="list-section">
+                <h2>2. Thẻ Danh sách (Lists)</h2>
+
+                <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+                    <!-- Danh sách không thứ tự (Unordered List) -->
+                    <div>
+                        <h3>Danh sách không thứ tự <code>&lt;ul&gt;</code></h3>
+                        <!-- Thuộc tính type: disc, circle, square -->
+                        <ul type="disc">
+                            <li>Mục 1 (Thẻ <code>&lt;li&gt;</code>)</li>
+                            <li>Mục 2</li>
+                            <li>Mục 3</li>
+                        </ul>
+                    </div>
+
+                    <!-- Danh sách có thứ tự (Ordered List) -->
+                    <div>
+                        <h3>Danh sách có thứ tự <code>&lt;ol&gt;</code></h3>
+                        <!-- Thuộc tính start (bắt đầu từ số bao nhiêu), reversed (đảo ngược) -->
+                        <ol start="1" type="1">
+                            <li>Bước 1: Khởi tạo</li>
+                            <li>Bước 2: Viết code</li>
+                            <li>Bước 3: Chạy ứng dụng</li>
+                        </ol>
+                    </div>
+
+                    <!-- Danh sách mô tả (Description List) -->
+                    <div>
+                        <h3>Danh sách mô tả <code>&lt;dl&gt;</code></h3>
+                        <dl>
+                            <dt><strong>HTML</strong></dt>
+                            <dd>- Ngôn ngữ đánh dấu siêu văn bản (HyperText Markup Language)</dd>
+                            <dt><strong>CSS</strong></dt>
+                            <dd>- Ngôn ngữ định dạng trang web (Cascading Style Sheets)</dd>
+                        </dl>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: MEDIA (HÌNH ẢNH, ÂM THANH, VIDEO, IFRAME) -->
+            <section id="media-section">
+                <h2>3. Hình ảnh & Đa phương tiện (Media)</h2>
+
+                <!-- Thẻ Hình ảnh <img> -->
+                <h3>Thẻ <code>&lt;img&gt;</code> (Hình ảnh)</h3>
+                <div class="demo-box">
+                    <!-- 
+                        Các thuộc tính quan trọng của <img>:
+                        - src: Đường dẫn hình ảnh
+                        - alt: Văn bản thay thế khi ảnh lỗi/dành cho đọc màn hình (SEO)
+                        - width / height: Kích thước ảnh
+                        - loading="lazy": Tải chậm hình ảnh để tối ưu tốc độ trang
+                    -->
+                    <img src="anh.jpg" alt="Ảnh ví dụ con mèo" width="200" height="auto" loading="lazy" style="border-radius: 8px;">
+                    <p class="tag-note">Thuộc tính hay dùng: <code>src</code>, <code>alt</code>, <code>width</code>, <code>height</code>, <code>loading="lazy"</code></p>
+                </div>
+
+                <!-- Thẻ Video & Audio -->
+                <h3>Thẻ <code>&lt;audio&gt;</code> & <code>&lt;video&gt;</code></h3>
+                <div class="demo-box">
+                    <!-- controls (hiển thị bộ điều khiển), autoplay, loop, muted -->
+                    <p><strong>Audio:</strong></p>
+                    <audio controls preload="metadata">
+                        <source src="sample.mp3" type="audio/mpeg">
+                        Trình duyệt của bạn không hỗ trợ thẻ audio.
+                    </audio>
+
+                    <p style="margin-top: 15px;"><strong>Video:</strong></p>
+                    <!-- poster (hình ảnh đại diện trước khi bấm phát) -->
+                    <video controls width="320" poster="anh.jpg">
+                        <source src="sample.mp4" type="video/mp4">
+                        Trình duyệt của bạn không hỗ trợ thẻ video.
+                    </video>
+                </div>
+
+                <!-- Thẻ <iframe> Nhúng trang web/video bên ngoài -->
+                <h3>Thẻ <code>&lt;iframe&gt;</code> (Nhúng nội dung ngoài)</h3>
+                <p class="tag-note">Nhúng bản đồ, video YouTube hoặc trang web khác vào ứng dụng</p>
+                <iframe src="https://www.wikipedia.org" width="100%" height="200" style="border:1px solid #ccc; border-radius: 6px;" title="Wikipedia Example"></iframe>
+            </section>
+
+            <!-- SECTION 4: FORM & CÁC THÀNH PHẦN NHẬP LIỆU (FORMS & INPUTS) -->
+            <section id="form-section">
+                <h2>4. Thẻ Form & Nhập liệu (Form & Input Controls)</h2>
+
+                <!-- 
+                    Thẻ <form>:
+                    - action: Nơi gửi dữ liệu đến (URL backend)
+                    - method: GET hoặc POST
+                    - autocomplete="on|off": Tự động điền
+                -->
+                <form action="#" method="POST" autocomplete="on">
+                    
+                    <!-- Input Text -->
+                    <label for="fullname">Họ và tên <code>(type="text")</code>:</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên..." required autofocus>
+
+                    <!-- Input Email & Password -->
+                    <div style="display: flex; gap: 20px;">
+                        <div style="flex: 1;">
+                            <label for="email">Email <code>(type="email")</code>:</label>
+                            <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="password">Mật khẩu <code>(type="password")</code>:</label>
+                            <input type="password" id="password" name="password" placeholder="Nhập mật khẩu..." minlength="6" required>
+                        </div>
+                    </div>
+
+                    <!-- Input Number & Date -->
+                    <div style="display: flex; gap: 20px;">
+                        <div style="flex: 1;">
+                            <label for="age">Tuổi <code>(type="number")</code>:</label>
+                            <input type="number" id="age" name="age" min="1" max="100" value="18">
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="dob">Ngày sinh <code>(type="date")</code>:</label>
+                            <input type="date" id="dob" name="dob">
+                        </div>
+                    </div>
+
+                    <!-- Select Option (Dropdown) -->
+                    <label for="city">Tỉnh / Thành phố <code>(&lt;select&gt; & &lt;option&gt;)</code>:</label>
+                    <select id="city" name="city">
+                        <option value="">-- Chọn thành phố --</option>
+                        <option value="hanoi" selected>Hà Nội</option>
+                        <option value="hcm">TP. Hồ Chí Minh</option>
+                        <option value="danang">Đà Nẵng</option>
+                    </select>
+
+                    <!-- Radio Buttons (Chọn 1 trong nhiều) -->
+                    <p style="margin-bottom: 5px;">Giới tính <code>(type="radio")</code>:</p>
+                    <input type="radio" id="male" name="gender" value="male" checked>
+                    <label for="male" style="font-weight: normal; margin-right: 15px;">Nam</label>
+                    
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female" style="font-weight: normal; margin-right: 15px;">Nữ</label>
+                    
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other" style="font-weight: normal;">Khác</label>
+
+                    <br><br>
+
+                    <!-- Checkboxes (Chọn nhiều) -->
+                    <p style="margin-bottom: 5px;">Sở thích <code>(type="checkbox")</code>:</p>
+                    <input type="checkbox" id="coding" name="hobby" value="coding" checked>
+                    <label for="coding" style="font-weight: normal; margin-right: 15px;">Lập trình</label>
+                    
+                    <input type="checkbox" id="music" name="hobby" value="music">
+                    <label for="music" style="font-weight: normal; margin-right: 15px;">Nghe nhạc</label>
+
+                    <input type="checkbox" id="sports" name="hobby" value="sports">
+                    <label for="sports" style="font-weight: normal;">Thể thao</label>
+
+                    <br><br>
+
+                    <!-- Input File (Tải tệp) -->
+                    <label for="avatar">Ảnh đại diện <code>(type="file")</code>:</label>
+                    <input type="file" id="avatar" name="avatar" accept="image/*">
+
+                    <!-- Textarea (Đoạn văn dài) -->
+                    <label for="bio">Tiểu sử / Ghi chú <code>(&lt;textarea&gt;)</code>:</label>
+                    <textarea id="bio" name="bio" rows="4" placeholder="Giới thiệu bản thân..."></textarea>
+
+                    <!-- Datalist (Gợi ý tự động) -->
+                    <label for="browser">Trình duyệt yêu thích <code>(&lt;datalist&gt;)</code>:</label>
+                    <input list="browsers" name="browser" id="browser" placeholder="Chọn hoặc nhập tên trình duyệt...">
+                    <datalist id="browsers">
+                        <option value="Google Chrome">
+                        <option value="Mozilla Firefox">
+                        <option value="Microsoft Edge">
+                        <option value="Apple Safari">
+                    </datalist>
+
+                    <br><br>
+
+                    <!-- Buttons -->
+                    <button type="submit">Đăng Ký (type="submit")</button>
+                    <button type="reset" style="background-color: #64748b;">Làm Lại (type="reset")</button>
+                    <button type="button" style="background-color: #059669;" onclick="alert('Bạn đã bấm nút!')">Nút Tùy Chỉnh (type="button")</button>
+                </form>
+            </section>
+
+            <!-- SECTION 5: BẢNG DỮ LIỆU (TABLES) -->
+            <section id="table-section">
+                <h2>5. Thẻ Bảng Dữ Liệu (Tables)</h2>
+                <p class="tag-note">Sử dụng các thẻ <code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code> và các thuộc tính <code>colspan</code>, <code>rowspan</code>.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>STT (th)</th>
+                            <th>Họ và Tên</th>
+                            <th>Vị Trí</th>
+                            <th>Mức Lương</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 (td)</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>Frontend Developer</td>
+                            <td rowspan="2">20,000,000 VNĐ (rowspan="2")</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Trần Thị B</td>
+                            <td>UI/UX Designer</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: center; font-weight: bold;">Tổng số nhân sự (colspan="3")</td>
+                            <td>2 Người</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- SECTION 6: THẺ TƯƠNG TÁC KHIẾN TRANG WEB ĐỘNG (INTERACTIVE ELEMENTS) -->
+            <section id="interactive-section">
+                <h2>6. Các thẻ Tương Tác & Thẻ Ngữ Nghĩa Khác</h2>
+
+                <!-- Details & Summary (Đóng/Mở nội dung) -->
+                <h3>Thẻ <code>&lt;details&gt;</code> & <code>&lt;summary&gt;</code> (Đóng/Mở nội dung)</h3>
+                <details>
+                    <summary style="cursor: pointer; font-weight: bold; color: var(--primary-color);">Click vào đây để xem nội dung ẩn / FAQ</summary>
+                    <p style="padding-top: 10px; color: #475569;">
+                        Thẻ <code>&lt;details&gt;</code> cho phép người dùng mở rộng hoặc thu gọn nội dung mà không cần dùng Javascript!
+                    </p>
+                </details>
+
+                <!-- Dialog (Hộp thoại Popup) -->
+                <h3 style="margin-top: 25px;">Thẻ <code>&lt;dialog&gt;</code> (Hộp thoại Popup)</h3>
+                <button onclick="document.getElementById('myDialog').showModal()">Mở Dialog Popup</button>
+                
+                <dialog id="myDialog" style="border: 1px solid #ccc; border-radius: 8px; padding: 20px;">
+                    <h3>Hộp thoại Dialog</h3>
+                    <p>Đây là nội dung popup tạo bằng thẻ HTML5 <code>&lt;dialog&gt;</code>.</p>
+                    <button onclick="document.getElementById('myDialog').close()" style="background-color: #dc2626;">Đóng Hộp Thoại</button>
+                </dialog>
+
+                <!-- Thẻ Phân Khối & Ngữ Nghĩa Layout -->
+                <h3 style="margin-top: 25px;">Thẻ Bố Cục Ngữ Nghĩa (Semantic Layout Tags)</h3>
+                <div class="demo-box">
+                    <ul>
+                        <li><code>&lt;header&gt;</code>: Phần đầu trang (Logo, tiêu đề, thanh công cụ)</li>
+                        <li><code>&lt;nav&gt;</code>: Thanh điều hướng trang web</li>
+                        <li><code>&lt;main&gt;</code>: Nội dung chính độc nhất của trang web</li>
+                        <li><code>&lt;section&gt;</code>: Nhóm các nội dung liên quan thành một phần/chương</li>
+                        <li><code>&lt;article&gt;</code>: Bài viết độc lập (bài báo, blog post, comment)</li>
+                        <li><code>&lt;aside&gt;</code>: Thanh bên (Sidebar), nội dung phụ</li>
+                        <li><code>&lt;footer&gt;</code>: Chân trang (Bản quyền, thông tin liên hệ)</li>
+                        <li><code>&lt;div&gt;</code>: Khối vô nghĩa ngữ nghĩa (dùng gom nhóm để đặt CSS/JS)</li>
+                        <li><code>&lt;span&gt;</code>: Thẻ inline dùng bao quanh đoạn chữ ngắn để chỉnh kiểu dáng</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER: Thẻ chân trang -->
+        <footer style="text-align: center; margin-top: 40px; padding: 20px; color: #64748b; border-top: 1px solid var(--border-color);">
+            <p>&copy; 2026 Demo AI HTML Cheatsheet. Được thiết kế chuẩn hóa HTML5.</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
