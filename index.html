@@ -1,43 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>Tên hiển thị trên tab trang web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Demo AI - Trang Chủ HTML5 Sinh Động</title>
 </head>
-<style>
-    h1 {
-        color: yellow;
-        font-size: 50px;
-    }
-
-    h2 {
-        color: green;
-        font-size: 40px;
-    }
-</style>
 
 <body>
-    <h1>Đây là thẻ tiêu đề h1</h1>
-    <h2>Đây là thẻ tiêu đề h2</h2>
-    <a href="https://www.google.com" target="_blank">Ấn vào đây sẽ chuyển trang sang Google</a>
-    <!-- <img src="anh.jpg" alt="Đây là ảnh con mèo"> -->
-    <ul>
-        <li>Thẻ này để hiển thị danh sách</li>
-        <li>Thẻ này để hiển thị danh sách</li>
-        <li>Thẻ này để hiển thị danh sách</li>
-    </ul>
+    <div class="main-wrapper">
+        <header>
+            <h1><i class="fa-rocket fa-solid"></i> ĐÂY LÀ THẺ TIÊU ĐỀ H1</h1>
+            <p class="subtitle">Trang demo các thẻ HTML cơ bản được thiết kế với giao diện hiện đại & rực rỡ</p>
+        </header>
 
-    <ol>
-        <li>Thẻ này để hiển thị danh sách</li>
-        <li>Thẻ này để hiển thị danh sách</li>
-        <li>Thẻ này để hiển thị danh sách</li>
-    </ol>
+        <h2><i class="fa-solid fa-layer-group"></i> 1. Danh sách tính năng (Thẻ Unordered List & Ordered List)</h2>
+        <div class="card-grid">
+            <div class="info-card">
+                <h3><i class="fa-solid fa-list-ul" style="color: #6366f1;"></i> Thẻ <code>&lt;ul&gt;</code></h3>
+                <ul>
+                    <li>Thẻ hiển thị danh sách dạng dấu chấm</li>
+                    <li>Hiệu ứng màu sắc nổi bật</li>
+                    <li>Sử dụng trong menu hoặc tính năng</li>
+                </ul>
+            </div>
 
-    <label for="username">Tên đăng nhập</label>
-    <input type="text" id="username">
+            <div class="info-card">
+                <h3><i class="fa-solid fa-list-ol" style="color: #06b6d4;"></i> Thẻ <code>&lt;ol&gt;</code></h3>
+                <ol>
+                    <li>Thẻ danh sách hiển thị theo thứ tự số</li>
+                    <li>Rất thích hợp cho các bước hướng dẫn</li>
+                    <li>Tự động đánh số tăng dần</li>
+                </ol>
+            </div>
+        </div>
+
+        <h2><i class="fa-solid fa-link"></i> 2. Liên kết & Tra cứu thẻ chi tiết</h2>
+        <p style="margin-bottom: 20px; color: var(--text-secondary);">
+            Bấm vào nút dưới đây để chuyển sang bảng tra cứu đầy đủ tất cả thẻ và thuộc tính HTML:
+        </p>
+        
+        <div style="text-align: center; margin: 25px 0;">
+            <a href="common_tags.html" class="btn-link">
+                <i class="fa-solid fa-book-open"></i> Mở Bảng Tra Cứu Thẻ HTML Sinh Động (common_tags.html)
+            </a>
+        </div>
+
+        <h2><i class="fa-solid fa-user-check"></i> 3. Thử nghiệm Form nhập liệu (Label & Input)</h2>
+        <div class="form-box">
+            <label for="username"><i class="fa-solid fa-user"></i> Tên đăng nhập</label>
+            <input type="text" id="username" placeholder="Nhập tên đăng nhập của bạn tại đây...">
+        </div>
+    </div>
 </body>
 
 </html>
